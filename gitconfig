@@ -62,3 +62,5 @@
 [user]
 	email = adauchez08@gmail.com
 	name = Arthur Dauchez
+[credential]
+	helper = store
