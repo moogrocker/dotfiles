@@ -106,6 +106,13 @@ source $ZSH/oh-my-zsh.sh
 
 alias jn="jupyter notebook"
 alias jnb="jupyter nbclassic"
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
 
 export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 export GH_BROWSER="'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'"
