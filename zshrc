@@ -1,8 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Pyenv fix for shell path issues
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"  # <--- Must come BEFORE oh-my-zsh loads
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# >>> pyenv initialization >>>
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# <<< pyenv initialization <<<
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -105,7 +115,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias jn="jupyter notebook"
-alias jnb="jupyter nbclassic"
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
@@ -113,6 +122,9 @@ alias gp='git push'
 alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
+alias sr='streamlit run'
+alias code="/mnt/c/Users/Utilisateur_/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+
 
 export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 export GH_BROWSER="'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'"
@@ -145,3 +157,6 @@ update_rprompt
 
 # Ensure the function is called before each prompt
 precmd_functions+=(update_rprompt)
+
+# Fiw direnv allow once and for all
+eval "$(direnv hook zsh)"
